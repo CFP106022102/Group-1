@@ -16,11 +16,27 @@
 
 # Step
 
-#Step1
+#Step1設定
 
-#Step2
+   設定初始形狀為長方體，長寬深分別為a,b,l
 
-#Step3
+#Step2計算
+
+   寫出電場、磁場，帶入馬克斯威方程式，求出E，B解
+
+#Step3畫圖
+
+   將所得結果畫於2D平面圖上
+   
+#Step4深入
+   1.畫出動態圖
+   
+   2.拓展成3D透視圖
+   
+   3.任意給長寬高 a，b，l
+   
+   4.改變形狀
+   
 
 # Assignment
 #(1)Computation and Analysis
@@ -33,3 +49,5 @@
 
 #Peng0831彭偉翔
 #JordanWu1997吳冠賢
+
+# Reference
