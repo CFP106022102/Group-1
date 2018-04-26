@@ -8,7 +8,10 @@ s# Group-1
 #JordanWu1997
 # Purpose : 
 #(1)Simulation of different modes of Wave Guide(e.g TE,TM modes)
-#(2)From 2D crossection to 3D 
+
+#(2)From 2D crossection to 3D display
+
+#(3)Expansion to different types of wave guide(e.g Cylinder)
 
 # Step :
 
