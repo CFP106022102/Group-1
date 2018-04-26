@@ -1,11 +1,22 @@
-# Group-1
-#project :　wave guide 
+s# Group-1
+# Project : Wave Guide Simulation
+# Members
+#Peng0831
+#fish105022115
+#a86091390
+#RenJunHuang
+#JordanWu1997
+# Purpose : 
+#(1)Simulation of different modes of Wave Guide(e.g TE,TM modes)
+#(2)From 2D crossection to 3D 
 
-#步驟1
+# Step :
 
-#步驟2
+#Step1
 
-#步驟3
+#Step2
 
-#
-asd
+#Step3
+
+# Assignment : 
+
