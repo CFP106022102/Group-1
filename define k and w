@@ -1,9 +1,17 @@
 import sympy as sym 
 
+#TE Mode
 #define k and w values
 wave_length = raw_input("Wave length = ")
 wave_length = int(wave_length)
 k = 2 * sym.pi/wave_length
 w = k * 3*10**8
+m = 1
+n = 0
+Bz = 
+
+#define wave parameter
+a = 10*10**-2
+b = 5*10**-2
 
 i = sym.I
