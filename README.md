@@ -41,15 +41,16 @@
    
 
 # Assignment
-#(1)Computation and Analysis
-
+#(1)E、B數值解
 #fish105022115林于瑋
 #a86091390林翰廷
 #RenJunHuang黃仁君
 
-#(2)Visualization and Modeling
-
+#(2)E、B解析解
 #Peng0831彭偉翔
+#JordanWu1997吳冠賢
+
+#(3)Quiver向量圖像化
 #JordanWu1997吳冠賢
 
 # Reference
