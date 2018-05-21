@@ -1,0 +1,152 @@
+import numpy as np
+import scipy as sp
+import matplotlib.pylab as pylab
+import math
+import matplotlib.pyplot as plt
+from mpl_toolkits.mplot3d import Axes3D
+
+#Wave Property
+C=3*10**8
+f=5*10**9
+w=2*math.pi*f
+
+#k's incident angle is set to 45 deg, and only x,z direction
+theta=45
+k=[(w/C)*math.cos(math.pi*(theta/180)),0,(w/C)*math.sin(math.pi*(theta/180))]
+
+#L:z;WD:y;H:x
+L=0.5;WD=0.05;H=0.05
+number=30
+delta=0.001
+
+x=np.linspace(0+delta,H-delta,number)
+y=np.linspace(0+delta,WD-delta,number)
+z=np.linspace(0+delta,L-delta,number)
+#print x,y,z
+
+
+X, Y, Z = np.meshgrid(x, y, z)
+#print X,Y,Z
+
+#WaveGuide Mode
+mode='TE'
+m=1;n=0
+
+#Calculate B Field
+B0=1
+alpha=math.pi/6
+BT=B0*(math.cos(alpha)+1j*math.sin(alpha))
+
+h2=(m*math.pi/H)**2+(n*math.pi/WD)**2
+Gamma=1j * math.sqrt((w/C)**2-h2)
+e = np.exp(-Gamma*Z)
+
+Bz=( BT * np.cos(m/H*math.pi*X) * np.cos(n/WD*math.pi*Y) * e).real
+Bx=( BT * (Gamma/h2)*(m*math.pi/H) * np.sin(m*math.pi/H*X) * np.cos(n/WD*math.pi*Y) * e).real
+By=( BT * (Gamma/h2)*(m*math.pi/H) * np.cos(m*math.pi/H*X) * np.sin(n/WD*math.pi*Y) * e).real
+
+#print(Bz)
+#print(Bx)
+#print(By)
+
+rad = []
+for i in range(number):
+    for j in range(number):
+        for k in range(number):
+            t = Bz[i][j][k]/Bx[i][j][k]
+            t1 = math.atan(t)
+            rad.append(t1)
+print(rad)
+
+# Plot of the 3d vector field
+
+#fig = plt.figure()
+#ax = fig.gca(projection='3d')
+plt.clf()
+fig = pylab.figure()
+
+ax = Axes3D(fig)
+
+#------------------------------------------------------------------------
+#Make sure these are floating point values:
+scale_x = 0.10
+scale_y = 0.10
+scale_z = 0.2
+
+#Axes are scaled down to fit in scene
+max_scale=max(scale_x, scale_y, scale_z)
+
+scale_x=scale_x/max_scale
+scale_y=scale_y/max_scale
+scale_z=scale_z/max_scale
+
+#Create scaling matrix
+scale = np.array([[scale_x,0,0,0],
+                  [0,scale_y,0,0],
+                  [0,0,scale_z,0],
+                  [0,0,0,1]])
+
+from mpl_toolkits.mplot3d import proj3d
+def get_proj_scale(self):
+    """
+        Create the projection matrix from the current viewing position.
+        
+        elev stores the elevation angle in the z plane
+        azim stores the azimuth angle in the x,y plane
+        
+        dist is the distance of the eye viewing point from the object
+        point.
+        
+        """
+    relev, razim = np.pi * self.elev/180, np.pi * self.azim/180
+    
+    xmin, xmax = self.get_xlim3d()
+    ymin, ymax = self.get_ylim3d()
+    zmin, zmax = self.get_zlim3d()
+    
+    # transform to uniform world coordinates 0-1.0,0-1.0,0-1.0
+    
+    worldM = proj3d.world_transformation(
+                                         xmin, xmax,
+                                         ymin, ymax,
+                                         zmin, zmax)
+        
+    # look into the middle of the new coordinates
+    R = np.array([0.5, 0.5, 0.5])
+                                         
+    xp = R[0] + np.cos(razim) * np.cos(relev) * self.dist
+    yp = R[1] + np.sin(razim) * np.cos(relev) * self.dist
+    zp = R[2] + np.sin(relev) * self.dist
+    E = np.array((xp, yp, zp))
+                                         
+    self.eye = E
+    self.vvec = R - E
+    self.vvec = self.vvec / proj3d.mod(self.vvec)
+                                         
+    if abs(relev) > np.pi/2:
+        # upside down
+        V = np.array((0, 0, -1))
+    else:
+        V = np.array((0, 0, 1))
+        zfront, zback = -self.dist, self.dist
+                                                     
+        viewM = proj3d.view_transformation(E, R, V)
+        perspM = proj3d.persp_transformation(zfront, zback)
+        M0 = np.dot(viewM, worldM)
+        M = np.dot(perspM, M0)
+                                                     
+        return np.dot(M, scale);
+#------------------------------------------------------------------------
+
+Axes3D.get_proj=get_proj_scale
+
+ax.quiver(X,Y,Z, Bx, By, Bz, length=0.005, normalize=True)
+plt.title('Vector Fields Visualization')
+ax.set_xlim3d(0, H*10)
+ax.set_ylim3d(0, WD*10)
+ax.set_zlim3d(0.44, 0.5)
+ax.set_xlabel('X axis')
+ax.set_ylabel('Y axis')
+ax.set_zlabel('Z axis')
+plt.axis('image')
+plt.show()
