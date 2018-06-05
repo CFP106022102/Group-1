@@ -1,0 +1,75 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Thu May 31 16:22:08 2018
+
+@author: swing
+"""
+import numpy as np
+import math
+import yt
+
+#Wave Property
+C=3*10**8
+f=5*10**9
+w=2*math.pi*f
+
+#k's incident angle is set to 45 deg, and only x,z direction
+theta=45
+k=[(w/C)*math.cos(math.pi*(theta/180)),0,(w/C)*math.sin(math.pi*(theta/180))]
+
+#L:z;WD:y;H:x
+L=0.5;WD=0.05;H=0.05
+number=50
+delta=0.001
+
+x=np.linspace(0+delta,H-delta,number-20)
+y=np.linspace(0+delta,WD-delta,number-20)
+z=np.linspace(0+delta,L-delta,number)
+#print x,y,z
+
+
+X,Y, Z = np.meshgrid(x,y, z)
+#print X,Y,Z
+
+#WaveGuide Mode
+mode='TE'
+m=1;n=0
+
+#Calculate B Field
+B0=1
+alpha=math.pi/6
+BT=B0*(math.cos(alpha)+1j*math.sin(alpha))
+
+h2=(m*math.pi/H)**2+(n*math.pi/WD)**2
+Gamma=1j * math.sqrt((w/C)**2-h2)
+e = np.exp(-Gamma*Z)
+
+Bz=( BT * np.cos(m/H*math.pi*X) * np.cos(n/WD*math.pi*(WD/2)) * e).real
+By=( BT * (Gamma/h2)*(m*math.pi/WD) * np.cos(m*math.pi/H*X) * np.sin(n/WD*math.pi*Y) * e).real
+Bx=( BT * (Gamma/h2)*(m*math.pi/H) * np.sin(m*math.pi/H*X) * np.cos(n/WD*math.pi*(WD/2)) * e).real
+
+B=np.sqrt(Bz**2+Bx**2+By**2)
+
+#---------------------------------------------------------------------------------
+#L=0.5;WD=0.05;H=0.05
+#arr = np.random.random(size=(64,64,64))
+#arr = np.array([[[3,3,3],[3,3,3],[3,3,3]],[[3,3,3],[3,3,3],[3,3,3]],[[3,3,3],[3,3,3],[3,3,3]]])
+data = { 'Bz' : Bz,'By' : By, 'Bx' : Bx, 'B' : B}
+
+
+
+bbox = np.array([[0, 0.05], [0, 0.5],[-1.5,1.5]])
+ds = yt.load_uniform_grid(data, data['B'].shape , length_unit="Mpc", bbox=bbox, nprocs=1)
+
+slc = yt.SlicePlot(ds, "y", ['B'])
+slc.set_log('B', False)
+
+prj = yt.ProjectionPlot(ds, "z", ['B'])
+prj.set_log('B', False)
+
+prj.save()
+
+
+#slc.save()
+
+
