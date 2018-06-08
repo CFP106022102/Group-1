@@ -2,11 +2,11 @@
 ## Project
 Wave Guide Simulation(波導管模擬)
 ## Members
-- Peng0831彭偉翔 
-- fish105022115林于瑋 
-- a86091390林翰廷 
-- RenJunHuang黃仁君 
-- JordanWu1997吳冠賢
+- 彭偉翔 Peng0831 
+- 林于瑋 fish105022115 
+- 林翰廷 a86091390 
+- 黃仁君 RenJunHuang 
+- 吳冠賢 JordanWu1997
 ## Purpose
 (1)Simulation of different modes of Wave Guide(e.g TE,TM modes)
 
