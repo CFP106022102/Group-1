@@ -91,7 +91,7 @@
     2.解析解GG
     3.畫圖brilliant!
     4.PPT:林翰廷努力生產中
-    5.GitHub內容：尚未完成
+    5.GitHub內容:尚未完成
 ```
     
 ## **VI.Reference**
