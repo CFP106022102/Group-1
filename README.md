@@ -16,9 +16,9 @@
 
 ## **II. Goal**
 
-- Simulation of different modes of Wave Guide(e.g TE,TM modes)
+- **Simulation of different modes of Wave Guide(e.g TE,TM modes)**
 
-- 2D crossection & 3D vector field display
+- **2D crossection & 3D vector field display**
 
 ## **III. Step**
 
