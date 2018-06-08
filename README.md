@@ -84,7 +84,7 @@
     
 ## **VI.Reference**
 - 數值偏微分方程：
-  http://www.glophy.com/index.php/2014-02-07-01-06-58/2014-02-07-01-07-46/104-2014-05-15-02-22-36?showall=1&limitstart=
+  (http://www.glophy.com/index.php/2014-02-07-01-06-58/2014-02-07-01-07-46/104-2014-05-15-02-22-36?showall=1&limitstart=)
 
-- Waveguide Propagation, Helge Engan :
-  https://www.ntnu.no/wiki/download/attachments/81790668/Waveguide_propagation_06.pdf?version=1&modificationDate=1443510894000&api=v2
+- Waveguide Propagation, Helge Engan:
+  (https://www.ntnu.no/wiki/download/attachments/81790668/Waveguide_propagation_06.pdf?version=1&modificationDate=1443510894000&api=v2)
