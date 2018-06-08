@@ -29,16 +29,16 @@
   
 ## **IV.Assignment**
 
-- E、B數值解
+- E、B數值解:
       林于瑋 fish105022115
       林翰廷 a86091390
       黃仁君 RenJunHuang
 
-- E、B解析解
+- E、B解析解:
       彭偉翔 Peng0831
       吳冠賢 JordanWu1997
 
-- Quiver向量圖像化
+- Quiver向量圖像化:
       彭偉翔 Peng0831
       吳冠賢 JordanWu1997
 
