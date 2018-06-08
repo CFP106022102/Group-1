@@ -1,4 +1,6 @@
 # **波導管電場磁場模擬與視覺化程式說明**
+## **0. 檔案使用**
+-如有重複檔案，請見檔案備註，upload序數最末者，即為應使用之檔案。
 
 ## **I. 環境設定**
 ```
@@ -10,7 +12,7 @@ from mpl_toolkits.mplot3d import Axes3D
 ```
 ## **II. 參數設定(SI-unit)**
 1.波導管性質
-- L：z方向長度、WD：y方向長度、H：x方向長度、delta：波導管管壁厚度。註：z方向為波傳遞方向
+- L：z方向長度、WD：y方向長度、H：x方向長度、delta：波導管管壁厚度。註：z方向為波傳遞方向。
 ```
 L = 0.5; WD = 0.05; H = 0.05; delta = 0
 ```
@@ -44,7 +46,7 @@ ax.view_init(0, 90)
 Range = (0.4, 0.5)
 ```
 ## **III. 開始模擬**
-- 對步驟II填入參數進行檢查
+- 對步驟II填入參數進行檢查。
 
     (1)頻率須超過底限頻率。
 
@@ -80,7 +82,7 @@ Gamma = 1j * math.sqrt((w/C)**2-h2) #Gamma: i*kz
 #----------------------------------------
 ```
 
-- 開始計算電場與磁場
+- 開始計算電場與磁場。
 ```
 #Constructing Space
 x=np.linspace(0+delta, H-delta , numberx)
@@ -122,7 +124,7 @@ elif mode == 'TM':
     By = ( ET * ((-1j)*w*mu/h2) * (m*math.pi/H ) * np.cos(m*math.pi/H*X) * np.sin(n/WD*math.pi*Y) * ex).real
 ```
 
-- 將向量場繪至三維立體圖上
+- 將向量場繪至三維立體圖上。
 ```
 #B-Field simulation
 if (Bfield & ~stop) == True:
@@ -137,7 +139,7 @@ if (Efield & ~stop) == True:
     print('Quivering E-field...')
 ```
 
-- 繪圖參數
+- 繪圖參數。
 ```
 #Visulization
 m = str(m); n = str(n)
@@ -164,7 +166,7 @@ ax.legend(loc='center right')
 #ax.legend(loc='best')
 plt.show()
 ```
-- 程式模擬完成
+- 程式模擬完成。
 ```
 print('End of Simulation')
 ```
