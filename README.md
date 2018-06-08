@@ -5,9 +5,13 @@
 ## **I.Member**
 
 - 彭偉翔 Peng0831 
+
 - 林于瑋 fish105022115 
+
 - 林翰廷 a86091390 
+
 - 黃仁君 RenJunHuang 
+
 - 吳冠賢 JordanWu1997
 
 ## **II.Goal**
@@ -20,26 +24,37 @@
 
 - **Step1 設定**
   設定初始形狀為長方體，長寬高分別為L,WD,H，長邊為電磁波傳遞方向。
+  
 - **Step2 計算**
   寫出電場、磁場，帶入馬克斯威方程式，求出E(電場)，B(磁場)解
+  
 - **Step3 畫圖**
   將所得結果分別以3D向量場、2D剖面圖作圖
+  
 - **step4 延伸**
   從最初TE10 mode延伸至任一TE、TM mode
   
 ## **IV.Assignment**
 
 - E、B數值解:
+
       林于瑋 fish105022115
+      
       林翰廷 a86091390
+      
       黃仁君 RenJunHuang
+      
 
 - E、B解析解:
+
       彭偉翔 Peng0831
+      
       吳冠賢 JordanWu1997
 
 - Quiver向量圖像化:
+
       彭偉翔 Peng0831
+      
       吳冠賢 JordanWu1997
 
 ## **V.Weekly log**
