@@ -57,41 +57,34 @@
 ```
     1.差分法解偏微分方程式:林于瑋、林翰廷、黃仁君
        (1)在網路上發現相關程式並嘗試了解其運作原理。
-       (2)了解波導性質及其推導過程。
-    
+       (2)了解波導性質及其推導過程。  
     2.TE10二維剖面圖
 ```    
 
 **W3 5/25-5/31**
 ```    
-    1.差分法解偏微分方程式:林于瑋、林翰廷、黃仁君
-    
+    1.差分法解偏微分方程式:林于瑋、林翰廷、黃仁君   
     2.TE10二維剖面圖
 ```
 
 **W4 6/01-6/07**
 ```
     1.數值解差強人意:林于瑋、林翰廷、黃仁君
-    
     2.TE10二維剖面圖
 ```
 
 **W5 6/08-6/14**
 ```
     1.數值解GG
-    
     2.解析解GG
-    
     3.畫圖brilliant!
-    
     4.PPT: 林翰廷努力生產中
-    
     5.GitHub內容：尚未完成
 ```
     
-# Reference
-(1)數值偏微分方程：
-http://www.glophy.com/index.php/2014-02-07-01-06-58/2014-02-07-01-07-46/104-2014-05-15-02-22-36?showall=1&limitstart=
+## **VI.Reference**
+- 數值偏微分方程：
+  http://www.glophy.com/index.php/2014-02-07-01-06-58/2014-02-07-01-07-46/104-2014-05-15-02-22-36?showall=1&limitstart=
 
-(2)Waveguide Propagation, Helge Engan :
-https://www.ntnu.no/wiki/download/attachments/81790668/Waveguide_propagation_06.pdf?version=1&modificationDate=1443510894000&api=v2
+- Waveguide Propagation, Helge Engan :
+  https://www.ntnu.no/wiki/download/attachments/81790668/Waveguide_propagation_06.pdf?version=1&modificationDate=1443510894000&api=v2
