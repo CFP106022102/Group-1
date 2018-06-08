@@ -122,7 +122,7 @@ elif mode == 'TM':
     By = ( ET * ((-1j)*w*mu/h2) * (m*math.pi/H ) * np.cos(m*math.pi/H*X) * np.sin(n/WD*math.pi*Y) * ex).real
 ```
 
-- 將向量場繪至三圍立體圖上
+- 將向量場繪至三維立體圖上
 ```
 #B-Field simulation
 if (Bfield & ~stop) == True:
