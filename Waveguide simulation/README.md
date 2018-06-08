@@ -22,7 +22,7 @@ f = 5*10**9; w = 2*math.pi*f; C = 3*10**8; mu = 4*math.pi*(10**-7)。
 ```
 
 3.模擬參數調整
-- 
+- mode：TE/TM；mn：mode調整(m、n為非負數之整數)；B/F field：選擇欲模擬之場(B：磁場、E：電場)。
 ```
 mode = 'TE'; m = 1; n = 0
 Bfield = True
@@ -32,15 +32,14 @@ Efield = True
 ```
 numberx = 10; numbery = 10; numberz = 30; 
 ```
-
+- size：呈現之圖片大小(長，寬)；ax.view_int：欲觀察3D圖像角度(傾角, 旋轉)，單位：deg。
 ```
-#Parameters for Observation
 size = (9, 12)
 fig = pylab.figure(figsize=size)
 ax = Axes3D(fig)
 ax.view_init(0, 90)
 ```
+- Range：欲顯示在圖片上之Z軸部分(可作為放大效果使用)。
 ```
-#Range of display on z-dir (Where to Zoom In)
 Range = (0.4, 0.5)
 ```
