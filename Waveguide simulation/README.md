@@ -8,8 +8,8 @@ import matplotlib.pyplot as plt
 import matplotlib.pylab as pylab
 from mpl_toolkits.mplot3d import Axes3D
 ```
-## **II. 參數設定(SI-unit)
-- L:z方向長度 WD:y方向長度 H:x方向長度 註:z方向為波傳遞方向
+## **II. 參數設定(SI-unit)**
+- L:z方向長度 WD:y方向長度  H:x方向長度 註:z方向為波傳遞方向
 ```
 L = 0.5; WD = 0.05; H = 0.05
 ```
