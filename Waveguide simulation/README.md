@@ -34,7 +34,7 @@ Efield = True
 ```
 numberx = 10; numbery = 10; numberz = 30; 
 ```
-- size：呈現之圖片大小(長，寬)；ax.view_int：欲觀察3D圖像角度(傾角, 旋轉)，單位：deg。
+- size：呈現之圖片大小(水平，垂直)；ax.view_int：欲觀察3D圖像角度(傾角, 旋轉)，單位：deg。
 ```
 size = (9, 12)
 fig = pylab.figure(figsize=size)
