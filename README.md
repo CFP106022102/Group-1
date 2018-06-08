@@ -29,22 +29,22 @@
   
 ## **IV.Assignment**
 
-- (1)E、B數值解
-     林于瑋 fish105022115
-     林翰廷 a86091390
-     黃仁君 RenJunHuang
+- E、B數值解
+      林于瑋 fish105022115
+      林翰廷 a86091390
+      黃仁君 RenJunHuang
 
-- (2)E、B解析解
-     彭偉翔 Peng0831
-     吳冠賢 JordanWu1997
+- E、B解析解
+      彭偉翔 Peng0831
+      吳冠賢 JordanWu1997
 
-- (3)Quiver向量圖像化
-     彭偉翔 Peng0831
-     吳冠賢 JordanWu1997
+- Quiver向量圖像化
+      彭偉翔 Peng0831
+      吳冠賢 JordanWu1997
 
 ## **V.Weekly log**
 
-###**W1 5/11-5/17**
+#######**W1 5/11-5/17**
 ```
     1.差分法解偏微分方程式:林于瑋、林翰廷、黃仁君
        (1)檢索google尋找相關資訊並解讀。
