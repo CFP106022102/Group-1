@@ -48,7 +48,7 @@ Range = (0.4, 0.5)
 
     (1)頻率須超過底限頻率。
 
-    (2)不得出現TM10或01模式。
+    (2)不得出現TM10或TM01模式。
 ```
 #----------------------------------------
 #Check Before Simulation
@@ -79,6 +79,8 @@ Gamma = 1j * math.sqrt((w/C)**2-h2) #Gamma: i*kz
 #End of Check Before Simulation
 #----------------------------------------
 ```
+
+- 開始計算電場與磁場
 ```
 #Constructing Space
 x=np.linspace(0+delta, H-delta , numberx)
@@ -118,7 +120,10 @@ elif mode == 'TM':
     Bz = 0 * X 
     Bx = ( ET * (( 1j)*w*mu/h2) * (n*math.pi/WD) * np.sin(m*math.pi/H*X) * np.cos(n/WD*math.pi*Y) * ex).real
     By = ( ET * ((-1j)*w*mu/h2) * (m*math.pi/H ) * np.cos(m*math.pi/H*X) * np.sin(n/WD*math.pi*Y) * ex).real
+```
 
+- 將向量場繪至三圍立體圖上
+```
 #B-Field simulation
 if (Bfield & ~stop) == True:
     Bq = ax.quiver(X, Y, Z, Bx, By, Bz, length=0.005, normalize=True, alpha=0.6, arrow_length_ratio=0.3, 
@@ -131,6 +136,8 @@ if (Efield & ~stop) == True:
                    color='blue', label='E-field') 
     print('Quivering E-field...')
 ```
+
+- 繪圖參數
 ```
 #Visulization
 m = str(m); n = str(n)
@@ -155,6 +162,9 @@ ax.plot([H,H,H,H,H],[0,WD,WD,0,0],[0,0,L,L,0],'--k',alpha=op, label='WaveGuide')
 
 ax.legend(loc='center right')
 #ax.legend(loc='best')
-plt.show()    
+plt.show()
+```
+-程式模擬完成
+```
 print('End of Simulation')
 ```
