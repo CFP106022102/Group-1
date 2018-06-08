@@ -2,7 +2,7 @@
 
 ## **Wave Guide Simulation(波導管模擬)**
 
-## **I.Members**
+## **I.Member**
 
 - 彭偉翔 Peng0831 
 - 林于瑋 fish105022115 
