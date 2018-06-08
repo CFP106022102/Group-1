@@ -164,7 +164,7 @@ ax.legend(loc='center right')
 #ax.legend(loc='best')
 plt.show()
 ```
--程式模擬完成
+- 程式模擬完成
 ```
 print('End of Simulation')
 ```
