@@ -14,16 +14,15 @@ from mpl_toolkits.mplot3d import Axes3D
 L = 0.5; WD = 0.05; H = 0.05
 ```
 
-- x、y、z 三方向上欲觀測的數目點，總數目點為三者之積；delta 波導管管壁厚度
+- number(x、y、z)： 三方向上欲觀測的數目點，總數目點為三者之積；delta：波導管管壁厚度
 ```
-#The Number of points for oberservation on each dir, delta: thickness of the waveguide
 numberx = 10; numbery = 10; numberz = 30; delta = 0
 ```
-
+- f：入射波頻率；w：入射波角頻率；C:真空中光速；mu：真空介電係數
 ```
-#Wave Property in vaccum
 f = 5*10**9; w = 2*math.pi*f; C = 3*10**8; mu = 4*math.pi*(10**-7)
 ```
+
 ```
 #WaveGuide's Mode(mn) & Field to Simulate
 mode = 'TE'; m = 1; n = 0
