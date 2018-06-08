@@ -1,49 +1,49 @@
 # **Group-1**
+
 ## **Wave Guide Simulation(波導管模擬)**
+
 ## **I.Members**
+
 - 彭偉翔 Peng0831 
 - 林于瑋 fish105022115 
 - 林翰廷 a86091390 
 - 黃仁君 RenJunHuang 
 - 吳冠賢 JordanWu1997
+
 ## **II.Goal**
-(1)Simulation of different modes of Wave Guide(e.g TE,TM modes)
 
-(2)2D crossection & 3D vector field display
+- Simulation of different modes of Wave Guide(e.g TE,TM modes)
 
-## **III.Step***
+- 2D crossection & 3D vector field display
 
-- Step1設定
-  設定初始形狀為長方體，長寬深分別為a,b,l
-- Step2計算
-  寫出電場、磁場，帶入馬克斯威方程式，求出E，B解
-- Step3畫圖
-  將所得結果畫於2D平面圖上
-- Step4深入
-   1.畫出動態圖
-   
-   2.拓展成3D透視圖
-   
-   3.任意給長寬高 a，b，l
-   
-   4.改變形狀 
+## **III.Step**
 
-# Assignment
-#(1)E、B數值解
-#fish105022115林于瑋
-#a86091390林翰廷
-#RenJunHuang黃仁君
+- **Step1 設定**
+  設定初始形狀為長方體，長寬高分別為L,WD,H，長邊為電磁波傳遞方向。
+- **Step2 計算**
+  寫出電場、磁場，帶入馬克斯威方程式，求出E(電場)，B(磁場)解
+- **Step3 畫圖**
+  將所得結果分別以3D向量場、2D剖面圖作圖
+- **step4 延伸**
+  從最初TE10 mode延伸至任一TE、TM mode
+  
+## **IV Assignment**
 
-#(2)E、B解析解
-#Peng0831彭偉翔
-#JordanWu1997吳冠賢
+- (1)E、B數值解
+     林于瑋 fish105022115
+     林翰廷 a86091390
+     黃仁君 RenJunHuang
 
-#(3)Quiver向量圖像化
-#Peng0831彭偉翔
-#JordanWu1997吳冠賢
+- (2)E、B解析解
+     彭偉翔 Peng0831
+     吳冠賢 JordanWu1997
+
+- (3)Quiver向量圖像化
+     彭偉翔 Peng0831
+     吳冠賢 JordanWu1997
 
 # Weekly to-do list
-- [X]
+
 #W1 5/11-5/17
 
     (1)差分法解偏微分方程式:林于瑋、林翰廷、黃仁君
