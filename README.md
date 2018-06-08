@@ -6,10 +6,10 @@
 - 林翰廷 a86091390 
 - 黃仁君 RenJunHuang 
 - 吳冠賢 JordanWu1997
-## Purpose
+## **II.Goal**
 (1)Simulation of different modes of Wave Guide(e.g TE,TM modes)
 
-(2)From 2D crossection to 3D display
+(2)2D crossection & 3D vector field display
 
 # Step
 
