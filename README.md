@@ -27,7 +27,7 @@
 - **step4 延伸**
   從最初TE10 mode延伸至任一TE、TM mode
   
-## **IV Assignment**
+## **IV.Assignment**
 
 - (1)E、B數值解
      林于瑋 fish105022115
