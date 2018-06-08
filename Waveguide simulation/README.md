@@ -73,8 +73,8 @@ Gamma = 1j * math.sqrt((w/C)**2-h2) #Gamma: i*kz
 
 #End of Check Before Simulation
 #----------------------------------------
-
-
+```
+```
 #Constructing Space
 x=np.linspace(0+delta, H-delta , numberx)
 y=np.linspace(0+delta, WD-delta, numbery)
@@ -125,7 +125,8 @@ if (Efield & ~stop) == True:
     Eq = ax.quiver(X, Y, Z, Ex, Ey, Ez, length=0.005, normalize=True, alpha=0.6, arrow_length_ratio=0.3,
                    color='blue', label='E-field') 
     print('Quivering E-field...')
-
+```
+```
 #Visulization
 m = str(m); n = str(n)
 plt.title('Vector-Field Visualization - '+ (mode+m+n) +' mode')
