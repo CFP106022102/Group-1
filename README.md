@@ -2,7 +2,7 @@
 
 ## **Wave Guide Simulation(波導管模擬)**
 
-## **I.Member**
+## **I. Member**
 
 - 彭偉翔 Peng0831 
 
@@ -14,13 +14,13 @@
 
 - 吳冠賢 JordanWu1997
 
-## **II.Goal**
+## **II. Goal**
 
 - Simulation of different modes of Wave Guide(e.g TE,TM modes)
 
 - 2D crossection & 3D vector field display
 
-## **III.Step**
+## **III. Step**
 
 - **Step1 設定**
   設定初始形狀為長方體，長寬高分別為L,WD,H，長邊為電磁波傳遞方向。
@@ -34,7 +34,7 @@
 - **step4 延伸**
   從最初TE10 mode延伸至任一TE、TM mode
   
-## **IV.Assignment**
+## **IV. Assignment**
 
 - E、B數值解:
 ```
@@ -54,7 +54,7 @@
       吳冠賢 JordanWu1997
 ```
 
-## **V.Weekly log**
+## **V. Weekly log**
 
 **W1 5/11-5/17**
 ```
@@ -94,7 +94,7 @@
     5.GitHub內容:尚未完成
 ```
     
-## **VI.Reference**
+## **VI. Reference**
 - **數值偏微分方程**：
 
    http://www.glophy.com/index.php/2014-02-07-01-06-58/2014-02-07-01-07-46/104-2014-05-15-02-22-36?showall=1&limitstart=
