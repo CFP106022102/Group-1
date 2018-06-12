@@ -53,6 +53,11 @@
       彭偉翔 Peng0831   
       吳冠賢 JordanWu1997
 ```
+- yt 2D graph
+```
+      彭偉翔 Peng0831 
+      吳冠賢 JordanWu1997
+```
 
 ## **V. Weekly log**
 
@@ -91,7 +96,8 @@
     2.解析解GG
     3.畫圖brilliant!
     4.PPT:林翰廷努力生產中
-    5.GitHub內容:尚未完成
+    5.GitHub內容:已完成大綱與3D模擬程式介紹
+    6.yt-2D-graph:完成
 ```
     
 ## **VI. Reference**
