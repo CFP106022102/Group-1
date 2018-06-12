@@ -1,9 +1,0 @@
-import sympy as sym 
-
-#define k and w values
-wave_length = raw_input("Wave length = ")
-wave_length = int(wave_length)
-k = 2 * sym.pi/wave_length
-w = k * 3*10**8
-
-i = sym.I
