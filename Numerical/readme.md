@@ -18,3 +18,158 @@
     ，推測是在求Bx.By.Ex.Ey的偏微分方式是有問題的，因此改為使用函數gradient來重新運算，但測試結果依然無法求得接近的結果。
     最終在多次的檢查程式碼後，我們依然認為在最前段求解Bz的二次偏微分方程式求解，應該是沒有問題的，但最後在偏微分各點數值時出了問題
     ，可能與其運算定義上還要再多加釐清。
+
+
+I.環境設定
+
+    import numpy as np
+    import numpy.linalg as lg
+    import math
+ 
+ II.參數設定(SI-unit)
+   1.波導管性質
+   
+    a = 5*10**-2
+    b = 5*10**-2
+    c=5*10**-1
+   
+   2.入射波物理性質
+    
+    C=3*10**8
+    fq=5*10**9
+    w=2*math.pi*fq
+    kz=np.sqrt(w*w/C/C-(math.pi*math.pi*(m*m/a/a+n*n/b/b)))
+    B0=1
+    complexcoe=w*w/C/C-kz*kz
+   
+   3.選擇波導管種類
+   
+     mode：TE/TM；mn：mode調整(m、n為非負數之整數)
+     m=1
+     n=0
+     
+ III.計算數值解
+   1.定義函數  
+   
+     def pde_waveguide_TE(f,g,BFx,Domain,Mx,My,Mz,c,tol,MaxIter):
+   2.  
+     
+     Bx=[]
+     By=[]
+     Bz=[]
+     Ex=[]
+     Ey=[]
+     Ez=[]
+     z=np.linspace(0,c,Mz)
+
+     bx0, bxf, by0, byf = BFx[0], BFx[1], BFx[2], BFx[3]
+     x0, xf, y0, yf = Domain[0], Domain[1], Domain[2], Domain[3]
+     
+     hx = float(xf-x0)/Mx
+     hy = float(yf-y0)/My
+
+     x = [x0+j*hx for j in range(1,Mx)]
+     y = [y0+i*hy for i in range(1,My)]
+
+     Mx, My = Mx+1, My+1
+     
+   3.設定複數
+       
+     for intz in z:
+       
+       #set complex number to calculate 
+        u = np.zeros([My,Mx])*1j
+        F = np.zeros([My,Mx])*1j
+        G = np.zeros([My,Mx])*1j
+        u0 = np.zeros([My,Mx])*1j
+        ux = np.zeros([My,Mx])*1j
+        uy = np.zeros([My,Mx])*1j
+        ez = np.zeros([My,Mx])*1j
+        ex = np.zeros([My,Mx])*1j
+        ey = np.zeros([My,Mx])*1j
+   
+   4.設定邊界條件
+   
+        j = 1
+        for xj in x:
+            u[0,j], u[My-1,j] = by0(xj), byf(xj)
+            j+=1
+        i = 1
+        for yi in y:
+            u[i,0], u[i,Mx-1] = bx0(yi), bxf(yi)
+            i+=1
+   5.設定z方向係數
+       
+        #adding the z direction coefficient 
+        u = u*(np.cos((kz*intz))+1j*np.sin(kz*intz))
+        
+        
+   6.平衡邊界值
+        
+        sum_of_bv = sum(u[0,:])+sum(u[My-1,:])+sum(u[1:My-1,0])+sum(u[1:My-1,Mx-1])
+        u[1:My-1,1:Mx-1] = float(sum_of_bv)/(2*(Mx+My-2))
+        
+   7.設定f(xj,yi) & g(xj,yi)
+        
+        for i in range(1,My-1):
+            for j in range(1,Mx-1):
+                F[i,j], G[i,j] = f(x[j-1],y[i-1]), g(x[j-1],y[i-1])   
+   8.定義變數
+   
+        dx2, dy2 = hx**2, hy**2
+        dxy2 = 2*(dx2+dy2)
+        rx, ry = dx2/dxy2, dy2/dxy2
+        rxy = rx*dy2   
+        
+   9.解u(Bz)數值解     
+   
+        for itr in range(MaxIter):
+            for i in range(1,My-1):
+                for j in range(1,Mx-1):
+                    u[i,j] = ry*(u[i,j+1]+u[i,j-1])+rx*(u[i+1,j]+u[i-1,j])+rxy*(G[i,j]*u[i,j]-F[i,j])
+             
+            Err = abs(u-u0)
+
+            
+            if (itr>1) & (Err.max()<tol):
+                break
+            
+            u0=u        
+        
+   10.用差分法計算Bx,By,Ex,Ey                  
+        
+        for i in range(Mx-1):
+            for j in range(My-1): 
+                ux[i,j] = (u[i,j+1]-u[i,j])/hx
+                uy[i,j] = (u[i+1,j]-u[i,j])/hy
+        
+        
+        for i in range(Mx-1):
+            for j in range(My-1): 
+                ex[i,j] = (u[i+1,j]-u[i,j])/hy
+                ey[i,j] = (u[i,j+1]-u[i,j])/hx        
+    
+   11.算出完整的Bx,By,Ex,Ey   
+        
+        ux = ux*kz*1j/(w*w/C/C-kz*kz)
+        uy = uy*kz*1j/(w*w/C/C-kz*kz)
+        ex = ex*w*1j/(w*w/C/C-kz*kz)
+        ey = ey*(-w)*1j/(w*w/C/C-kz*kz)        
+        
+   12.將計算結果取實數部分  
+        
+        u = np.real(u[1:My-1,1:Mx-1])
+        ux = np.real(ux[1:My-1,1:Mx-1])
+        uy = np.real(uy[1:My-1,1:Mx-1])
+        ex = np.real(ex[1:My-1,1:Mx-1])
+        ey = np.real(ey[1:My-1,1:Mx-1])
+        ez = np.real(ez[1:My-1,1:Mx-1])        
+    
+   13.將每單一平面數值解整合
+   
+        Bx.append(ux)
+        By.append(uy)
+        Bz.append(u)
+        Ex.append(ex)
+        Ey.append(ey)
+        Ez.append(ez)   
