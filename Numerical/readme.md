@@ -50,6 +50,7 @@ I.環境設定
      n=0
      
  III.計算數值解
+ 
    1.定義函數  
 
      def pde_waveguide_TE(f,g,BFx,Domain,Mx,My,Mz,c,tol,MaxIter):
