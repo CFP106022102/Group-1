@@ -27,6 +27,7 @@ I.環境設定
     import math
  
  II.參數設定(SI-unit)
+ 
     1.波導管性質
    
       a = 5*10**-2
