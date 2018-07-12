@@ -108,3 +108,7 @@
 - **Waveguide Propagation, Helge Engan:**
 
    https://www.ntnu.no/wiki/download/attachments/81790668/Waveguide_propagation_06.pdf?version=1&modificationDate=1443510894000&api=v2
+   
+- **Basic Github Writing:**
+
+  https://help.github.com/articles/basic-writing-and-formatting-syntax/#styling-text
